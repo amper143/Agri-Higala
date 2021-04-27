@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "863553103233",
+    "project_id": "agri-higala",
+    "storage_bucket": "agri-higala.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863553103233:android:d4975bcd997d126a69f480",
+        "android_client_info": {
+          "package_name": "com.example.agri_higala"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863553103233-7roj15pp0rd8pskurq3dfoov3bpafu9j.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.agri_higala",
+            "certificate_hash": "6c01c245ad05342159f25c32e404a47ea72530d9"
+          }
+        },
+        {
+          "client_id": "863553103233-lgcg3goe2rjavla16dgjn4c8jnc5oaa0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCTXHSGfCG3UrT3g7Lg2vc9kK-U60_6c7Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863553103233-lgcg3goe2rjavla16dgjn4c8jnc5oaa0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
