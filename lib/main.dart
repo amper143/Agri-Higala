@@ -1,7 +1,6 @@
 import 'package:agri_higala/Providers/cart.dart';
 import 'package:agri_higala/Seller/OrderDetails.dart';
 import 'package:agri_higala/pages/DrawMenu.dart';
-import 'package:firebase_storage/firebase_storage.dart';
 import 'package:provider/provider.dart';
 import 'package:agri_higala/pages/Navigation.dart';
 import 'package:flutter/material.dart';
@@ -10,13 +9,8 @@ import './pages/ProductDetails.dart';
 import 'package:agri_higala/Providers/products.dart';
 import './pages/CartPage.dart';
 import './Providers/Order.dart';
-import 'package:firebase_core/firebase_core.dart';
 
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-
-  runApp(MaterialApp(home: MyApp()));
-}
+void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   @override
