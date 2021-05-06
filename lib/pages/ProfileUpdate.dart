@@ -42,7 +42,7 @@ class _ProfileUpdateState extends State<ProfileUpdate> {
                     padding: EdgeInsets.all(10),
                     width: double.infinity,
                     child: Image.asset(
-                      'assets/images/person.png',
+                      'assets/images/profile.jpg',
                       height: 150,
                       width: 150,
                     )),

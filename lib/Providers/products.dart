@@ -39,7 +39,7 @@ class Products with ChangeNotifier {
         location: 'Carmen',
         stock: 50,
         unitType: 'per Kilo',
-        image: 'assets/images/pork.jpg',
+        image: 'assets/images/rib.jpg',
         date: '9/28/21',
         sellerImage:
             'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWva_M-mhVApOJ-zLS7GyKm4mhOKfrjmnWZQ&usqp=CAU',

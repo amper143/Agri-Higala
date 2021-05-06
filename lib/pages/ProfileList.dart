@@ -2,11 +2,14 @@ import 'package:agri_higala/pages/AboutUs.dart';
 import 'package:agri_higala/pages/Account.dart';
 import 'package:agri_higala/pages/ContactUs.dart';
 import 'package:agri_higala/pages/CustomerService.dart';
+import 'package:agri_higala/pages/Discount.dart';
 import 'package:agri_higala/pages/Feedback.dart';
 import 'package:agri_higala/pages/MyOrder.dart';
+import 'package:agri_higala/pages/Settings.dart';
 import 'package:agri_higala/seller/SellerSign.dart';
 import 'package:agri_higala/pages/TransactionHistory.dart';
 import 'package:flutter/material.dart';
+import 'package:agri_higala/main.dart';
 
 class ProfileList extends StatelessWidget {
   @override
@@ -18,7 +21,10 @@ class ProfileList extends StatelessWidget {
         ListTile(
           leading:
               Image.asset('assets/images/balay.png', height: 30, width: 30),
-          onTap: () {},
+          onTap: () {
+            Navigator.pushReplacement(context,
+                MaterialPageRoute(builder: (context) => FirstScreen()));
+          },
           title: Text(
             'Home',
             style: TextStyle(fontWeight: FontWeight.bold),
@@ -28,7 +34,10 @@ class ProfileList extends StatelessWidget {
         ListTile(
           leading:
               Image.asset('assets/images/discount.png', height: 30, width: 30),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => DiscountPage()));
+          },
           title:
               Text('Discount', style: TextStyle(fontWeight: FontWeight.bold)),
         ),
@@ -75,7 +84,10 @@ class ProfileList extends StatelessWidget {
         ListTile(
           leading:
               Image.asset('assets/images/setting.png', height: 30, width: 30),
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => Settings()));
+          },
           title: Text(
             'Setting',
             style: TextStyle(fontWeight: FontWeight.bold),

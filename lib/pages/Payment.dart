@@ -1,3 +1,4 @@
+import 'package:agri_higala/pages/CashOnDelivery.dart';
 import 'package:flutter/material.dart';
 
 class Payment extends StatelessWidget {
@@ -36,7 +37,12 @@ class Payment extends StatelessWidget {
                       color: Colors.blue,
                       child: Text('Cash on Delivery',
                           style: TextStyle(color: Colors.white)),
-                      onPressed: () {}),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => CashonDelivery()));
+                      }),
                   Container(
                     width: 150,
                     child: FlatButton(
@@ -91,7 +97,7 @@ class Payment extends StatelessWidget {
                             children: [
                               Text('Total Amount'),
                               Spacer(),
-                              Text(' 1,200'),
+                              Text('P 245.00'),
                             ],
                           ),
                         ),

@@ -8,6 +8,7 @@ import 'package:agri_higala/Providers/products.dart';
 import '../widgets/badge.dart';
 import '../Providers/cart.dart';
 import './CartPage.dart';
+import '../pages/Discount.dart';
 
 class NavBar extends StatefulWidget {
   @override
@@ -158,7 +159,10 @@ class _NavBarState extends State<NavBar> {
             padding: EdgeInsets.only(right: 80),
             child: Text('Discount',
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => DiscountPage()));
+            },
           ),
           Consumer<Cart>(
             builder: (_, cartData, los) => Badge(

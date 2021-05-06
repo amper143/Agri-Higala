@@ -1,5 +1,6 @@
 import 'package:agri_higala/models/auth.dart';
 import 'package:flutter/material.dart';
+import 'package:agri_higala/main.dart';
 
 class SignUp extends StatefulWidget {
   @override
@@ -7,6 +8,19 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
+  bool iconPassword = true;
+  void passwordVisibility() {
+    if (iconPassword == true) {
+      setState(() {
+        iconPassword = false;
+      });
+    } else {
+      setState(() {
+        iconPassword = true;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -77,9 +91,22 @@ class _SignUpState extends State<SignUp> {
                             child: Container(
                               width: MediaQuery.of(context).size.height / 5,
                               child: TextFormField(
-                                obscureText: true,
+                                obscureText: iconPassword,
                                 style: TextStyle(color: Colors.black),
                                 decoration: InputDecoration(
+                                  suffixIcon: InkWell(
+                                    onTap: passwordVisibility,
+                                    child: iconPassword
+                                        ? Icon(
+                                            Icons.visibility_off,
+                                            color: Colors.black,
+                                          )
+                                        : Icon(
+                                            Icons.visibility,
+                                            color:
+                                                Theme.of(context).primaryColor,
+                                          ),
+                                  ),
                                   border: InputBorder.none,
                                   hintText: 'Password',
                                   prefixIcon: Icon(
@@ -109,9 +136,22 @@ class _SignUpState extends State<SignUp> {
                             child: Container(
                               width: MediaQuery.of(context).size.height / 5,
                               child: TextFormField(
-                                obscureText: true,
+                                obscureText: iconPassword,
                                 style: TextStyle(color: Colors.black),
                                 decoration: InputDecoration(
+                                  suffixIcon: InkWell(
+                                    onTap: passwordVisibility,
+                                    child: iconPassword
+                                        ? Icon(
+                                            Icons.visibility_off,
+                                            color: Colors.black,
+                                          )
+                                        : Icon(
+                                            Icons.visibility,
+                                            color:
+                                                Theme.of(context).primaryColor,
+                                          ),
+                                  ),
                                   border: InputBorder.none,
                                   hintText: 'Pass-Confirm',
                                   prefixIcon: Icon(
@@ -322,7 +362,12 @@ class _SignUp3State extends State<SignUp3> {
                         color: Colors.green,
                         child: Text('Create Account',
                             style: TextStyle(color: Colors.white)),
-                        onPressed: () {}),
+                        onPressed: () {
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => FirstScreen()));
+                        }),
                   )),
                 ],
               ),

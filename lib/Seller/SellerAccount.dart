@@ -1,21 +1,18 @@
-import 'package:agri_higala/pages/ProfileUpdate.dart';
 import 'package:flutter/material.dart';
 
-class AccountPage extends StatefulWidget {
+class SellerAccount extends StatefulWidget {
   @override
-  _AccountPageState createState() => _AccountPageState();
+  _SellerAccountState createState() => _SellerAccountState();
 }
 
-class _AccountPageState extends State<AccountPage> {
-  String valueChoose;
-  List listItem = ['Male', 'Female'];
+class _SellerAccountState extends State<SellerAccount> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.green[400],
         centerTitle: true,
-        title: Text('Account'),
+        title: Text('Seller Account'),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -31,7 +28,7 @@ class _AccountPageState extends State<AccountPage> {
                       Container(
                         padding: EdgeInsets.fromLTRB(20, 10, 20, 0),
                         child: Image.asset(
-                          'assets/images/profile.jpg',
+                          'assets/images/seller.jpg',
                           height: 100,
                           width: 100,
                         ),
@@ -44,12 +41,7 @@ class _AccountPageState extends State<AccountPage> {
                               'Update',
                               style: TextStyle(color: Colors.white),
                             ),
-                            onPressed: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) => ProfileUpdate()));
-                            },
+                            onPressed: () {},
                           )),
                     ]),
                     Container(
@@ -63,7 +55,19 @@ class _AccountPageState extends State<AccountPage> {
                                 'Name: ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
-                              Text('John Doe'),
+                              Text('Abel Gatchalian'),
+                            ],
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Row(
+                            children: [
+                              Text(
+                                'Followers: ',
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              Text('4'),
                             ],
                           ),
                           SizedBox(
@@ -75,7 +79,7 @@ class _AccountPageState extends State<AccountPage> {
                                 'Joined: ',
                                 style: TextStyle(fontWeight: FontWeight.bold),
                               ),
-                              Text('March 2019 '),
+                              Text('March 2021 '),
                               Icon(Icons.edit)
                             ],
                           )
@@ -95,7 +99,7 @@ class _AccountPageState extends State<AccountPage> {
                     padding: EdgeInsets.all(10),
                     child: Column(
                       children: [
-                        Text('First name'),
+                        Text('Email'),
                         SizedBox(
                           height: 5,
                         ),
@@ -109,9 +113,9 @@ class _AccountPageState extends State<AccountPage> {
                                 style: TextStyle(color: Colors.black),
                                 decoration: InputDecoration(
                                   border: InputBorder.none,
-                                  hintText: 'John',
+                                  hintText: 'Abelgat@gmail.com',
                                 ))),
-                        Text('Last name'),
+                        Text('Mobile Number'),
                         SizedBox(
                           height: 5,
                         ),
@@ -125,7 +129,7 @@ class _AccountPageState extends State<AccountPage> {
                               style: TextStyle(color: Colors.black),
                               decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'Doe',
+                                hintText: '09965812341',
                               )),
                         ),
                         Text('Street/Purok/Barangay'),
@@ -142,7 +146,7 @@ class _AccountPageState extends State<AccountPage> {
                               style: TextStyle(color: Colors.black),
                               decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'Zone 1',
+                                hintText: 'Zone 1 Blk 1 Lot2',
                               )),
                         ),
                         Text('Barangay'),
@@ -159,10 +163,10 @@ class _AccountPageState extends State<AccountPage> {
                               style: TextStyle(color: Colors.black),
                               decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'Lumbia',
+                                hintText: 'Carmen',
                               )),
                         ),
-                        Text('Birthday'),
+                        Text('Schedule online time'),
                         SizedBox(
                           height: 5,
                         ),
@@ -176,50 +180,13 @@ class _AccountPageState extends State<AccountPage> {
                               style: TextStyle(color: Colors.black),
                               decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'January 1 1998',
+                                hintText: '1:00 - 4:00 pm',
                               )),
                         ),
-                        Text('Gender'),
                         SizedBox(
                           height: 5,
                         ),
-                        Container(
-                          margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                          child: Center(
-                            child: Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Container(
-                                decoration: BoxDecoration(
-                                    border: Border.all(
-                                        color: Colors.black, width: 1),
-                                    borderRadius: BorderRadius.circular(10)),
-                                child: Container(
-                                  padding: EdgeInsets.only(left: 15),
-                                  child: DropdownButton(
-                                      underline: SizedBox(),
-                                      isExpanded: true,
-                                      dropdownColor: Colors.grey[200],
-                                      hint: Text('Gender',
-                                          style: TextStyle(color: Colors.black),
-                                          textAlign: TextAlign.center),
-                                      value: valueChoose,
-                                      onChanged: (newValue) {
-                                        setState(() {
-                                          valueChoose = newValue;
-                                        });
-                                      },
-                                      items: listItem.map((valueItem) {
-                                        return DropdownMenuItem(
-                                          value: valueItem,
-                                          child: Text(valueItem),
-                                        );
-                                      }).toList()),
-                                ),
-                              ),
-                            ),
-                          ),
-                        ),
-                        Text('Email'),
+                        Text('Description'),
                         SizedBox(
                           height: 5,
                         ),
@@ -233,7 +200,7 @@ class _AccountPageState extends State<AccountPage> {
                               style: TextStyle(color: Colors.black),
                               decoration: InputDecoration(
                                 border: InputBorder.none,
-                                hintText: 'JohnDoe@gmail.com',
+                                hintText: 'Freash and affordable products',
                               )),
                         ),
                         Builder(builder: (context) {

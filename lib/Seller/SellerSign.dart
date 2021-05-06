@@ -7,6 +7,19 @@ class SellerLogin extends StatefulWidget {
 }
 
 class _SellerLoginState extends State<SellerLogin> {
+  bool iconPassword = true;
+  void passwordVisibility() {
+    if (iconPassword == true) {
+      setState(() {
+        iconPassword = false;
+      });
+    } else {
+      setState(() {
+        iconPassword = true;
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -85,26 +98,46 @@ class _SellerLoginState extends State<SellerLogin> {
                                 borderRadius: BorderRadius.circular(10)),
                             width: MediaQuery.of(context).size.height / 2.5,
                             child: TextFormField(
+                                obscureText: iconPassword,
                                 style: TextStyle(color: Colors.black),
                                 decoration: InputDecoration(
+                                  suffixIcon: InkWell(
+                                    onTap: passwordVisibility,
+                                    child: iconPassword
+                                        ? Icon(
+                                            Icons.visibility_off,
+                                            color: Colors.black,
+                                          )
+                                        : Icon(
+                                            Icons.visibility,
+                                            color:
+                                                Theme.of(context).primaryColor,
+                                          ),
+                                  ),
                                   border: InputBorder.none,
                                   hintText: 'Password',
                                 ))),
                         SizedBox(height: 10),
-                        Container(
-                            child: FractionallySizedBox(
-                          widthFactor: 1,
-                          child: FlatButton(
-                              color: Colors.green,
-                              child: Text('LOGIN',
-                                  style: TextStyle(color: Colors.white)),
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => MainSeller()));
-                              }),
-                        )),
+                        Builder(builder: (context) {
+                          return Container(
+                              child: FractionallySizedBox(
+                            widthFactor: 1,
+                            child: FlatButton(
+                                color: Colors.green,
+                                child: Text('LOGIN',
+                                    style: TextStyle(color: Colors.white)),
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => MainSeller()));
+                                  SnackBar mysnackbar = SnackBar(
+                                      content: Text(
+                                          'You successfully login as a Seller!'));
+                                  Scaffold.of(context).showSnackBar(mysnackbar);
+                                }),
+                          ));
+                        }),
                       ],
                     )),
                   ),

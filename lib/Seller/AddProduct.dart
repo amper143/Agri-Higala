@@ -228,15 +228,22 @@ class _AddProductState extends State<AddProduct> {
                               hintText: 'Product Description',
                             ))),
                     SizedBox(height: 10),
-                    Container(
-                      margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
-                      width: double.infinity,
-                      child: FlatButton(
-                          color: Colors.green,
-                          child: Text('Published',
-                              style: TextStyle(color: Colors.white)),
-                          onPressed: () {}),
-                    ),
+                    Builder(builder: (context) {
+                      return Container(
+                        margin: EdgeInsets.fromLTRB(20, 0, 20, 0),
+                        width: double.infinity,
+                        child: FlatButton(
+                            color: Colors.green,
+                            child: Text('Published',
+                                style: TextStyle(color: Colors.white)),
+                            onPressed: () {
+                              SnackBar mysnackbar = SnackBar(
+                                  content:
+                                      Text('Your product has been published!'));
+                              Scaffold.of(context).showSnackBar(mysnackbar);
+                            }),
+                      );
+                    }),
                   ],
                 ),
               ),

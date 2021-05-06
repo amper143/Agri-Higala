@@ -1,6 +1,9 @@
 import 'package:agri_higala/Providers/products.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:agri_higala/main.dart';
+import './CartPage.dart';
+import '../pages/Inbox.dart';
 
 class ProductDetails extends StatelessWidget {
   //final String name;
@@ -142,15 +145,23 @@ class ProductDetails extends StatelessWidget {
                                 loadProduct.seller,
                               ),
                               Spacer(),
-                              Flexible(
-                                fit: FlexFit.tight,
-                                child: IconButton(
-                                    icon: Icon(
-                                      Icons.thumb_up,
-                                      color: Colors.green,
-                                    ),
-                                    onPressed: null),
-                              ),
+                              Builder(builder: (context) {
+                                return Flexible(
+                                  fit: FlexFit.tight,
+                                  child: IconButton(
+                                      icon: Icon(
+                                        Icons.thumb_up,
+                                        color: Colors.green,
+                                      ),
+                                      onPressed: () {
+                                        SnackBar mysnackbar = SnackBar(
+                                            content: Text(
+                                                'You have followed the seller'));
+                                        Scaffold.of(context)
+                                            .showSnackBar(mysnackbar);
+                                      }),
+                                );
+                              }),
                               Flexible(
                                 fit: FlexFit.tight,
                                 child: IconButton(
@@ -158,7 +169,13 @@ class ProductDetails extends StatelessWidget {
                                       Icons.chat,
                                       color: Colors.blue,
                                     ),
-                                    onPressed: null),
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  InboxMessage()));
+                                    }),
                               ),
                             ],
                           ),
@@ -207,14 +224,26 @@ class ProductDetails extends StatelessWidget {
                                     color: Colors.yellow,
                                     child: Text('Add to Cart',
                                         style: TextStyle(color: Colors.white)),
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                              builder: (context) =>
+                                                  CartPage()));
+                                    },
                                   ),
                                 ),
                                 FlatButton(
                                   color: Colors.green,
                                   child: Text('Go Back',
                                       style: TextStyle(color: Colors.white)),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                FirstScreen()));
+                                  },
                                 ),
                               ],
                             ),

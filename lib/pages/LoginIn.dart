@@ -12,6 +12,18 @@ class _LoginState extends State<Login> {
   final _formKey = GlobalKey<FormState>();
   String username;
   String password;
+  bool iconPassword = true;
+  void passwordVisibility() {
+    if (iconPassword == true) {
+      setState(() {
+        iconPassword = false;
+      });
+    } else {
+      setState(() {
+        iconPassword = true;
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,11 +81,25 @@ class _LoginState extends State<Login> {
                             child: Container(
                               width: MediaQuery.of(context).size.height / 5,
                               child: TextFormField(
+                                obscureText: iconPassword,
                                 onSaved: (value) {
                                   password = value;
                                 },
                                 style: TextStyle(color: Colors.black),
                                 decoration: InputDecoration(
+                                  suffixIcon: InkWell(
+                                    onTap: passwordVisibility,
+                                    child: iconPassword
+                                        ? Icon(
+                                            Icons.visibility_off,
+                                            color: Colors.black,
+                                          )
+                                        : Icon(
+                                            Icons.visibility,
+                                            color:
+                                                Theme.of(context).primaryColor,
+                                          ),
+                                  ),
                                   border: InputBorder.none,
                                   hintText: 'Password',
                                   prefixIcon: Icon(
@@ -129,7 +155,7 @@ class _LoginState extends State<Login> {
                                 Icons.person_add,
                                 color: Colors.white,
                               ),
-                              label: Text('login',
+                              label: Text('Login in my account',
                                   style: TextStyle(color: Colors.white)),
                               onPressed: login,
                               // Navigator.push(

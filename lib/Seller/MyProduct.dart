@@ -40,7 +40,7 @@ class _MyProductState extends State<MyProduct> {
                       width: 150,
                       height: 170,
                       child: Image.asset(
-                        'assets/images/avocado.jpg',
+                        'assets/images/pineapple.jpg',
                         fit: BoxFit.fill,
                       )),
                   Container(
@@ -52,7 +52,7 @@ class _MyProductState extends State<MyProduct> {
                           children: [
                             Text('Stock Id: ',
                                 style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('AV21')
+                            Text('PA10')
                           ],
                         ),
                         SizedBox(height: 10),
@@ -68,7 +68,7 @@ class _MyProductState extends State<MyProduct> {
                           children: [
                             Text('Price: ',
                                 style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('120.00')
+                            Text('P 30.00')
                           ],
                         ),
                         SizedBox(height: 10),
@@ -76,7 +76,7 @@ class _MyProductState extends State<MyProduct> {
                           children: [
                             Text('Stock: ',
                                 style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('50 Kg')
+                            Text('20 Kg')
                           ],
                         ),
                         SizedBox(height: 10),
@@ -100,7 +100,87 @@ class _MyProductState extends State<MyProduct> {
                           children: [
                             Text('Product : ',
                                 style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text('Avocado')
+                            Text('Pineapple')
+                          ],
+                        ),
+                      ],
+                    ),
+                  )
+                ],
+              ),
+            ),
+          ),
+          Container(
+            margin: EdgeInsets.fromLTRB(10, 0, 10, 0),
+            child: Card(
+              child: Row(
+                children: [
+                  Container(
+                      padding: EdgeInsets.fromLTRB(5, 5, 5, 5),
+                      width: 150,
+                      height: 170,
+                      child: Image.asset(
+                        'assets/images/watermelon.jpg',
+                        fit: BoxFit.fill,
+                      )),
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Row(
+                          children: [
+                            Text('Stock Id: ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('WA20')
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Text('Unit Type: ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('Per Kilo')
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Text('Price: ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('P 20.00')
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Text('Stock: ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('70 Kg')
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Text('Uploded date: ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('11/20/20')
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Text('Expiration Date: ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('11/30/20')
+                          ],
+                        ),
+                        SizedBox(height: 10),
+                        Row(
+                          children: [
+                            Text('Product : ',
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            Text('Watermelon')
                           ],
                         ),
                       ],

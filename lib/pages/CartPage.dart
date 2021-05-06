@@ -1,3 +1,4 @@
+import 'package:agri_higala/main.dart';
 import 'package:agri_higala/pages/CheckoutPage.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -31,7 +32,7 @@ class CartPage extends StatelessWidget {
                     child: Text(
                       'Cart Details',
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 15),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     )),
               )),
           Expanded(
@@ -76,7 +77,8 @@ class CartPage extends StatelessWidget {
                                 FlatButton(
                                     color: Colors.green[400],
                                     padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                    child: Text('Check Out'),
+                                    child: Text('Check Out',
+                                        style: TextStyle(color: Colors.white)),
                                     onPressed: () {
                                       Navigator.push(
                                           context,
@@ -93,15 +95,16 @@ class CartPage extends StatelessWidget {
                                     }),
                                 SizedBox(width: 5),
                                 FlatButton(
-                                    color: Colors.green[400],
+                                    color: Colors.blue[400],
                                     padding: EdgeInsets.fromLTRB(0, 0, 0, 0),
-                                    child: Text('Continue'),
+                                    child: Text('Home',
+                                        style: TextStyle(color: Colors.white)),
                                     onPressed: () {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                               builder: (context) =>
-                                                  CheckOutPage()));
+                                                  FirstScreen()));
                                     }),
                               ],
                             ),

@@ -30,6 +30,7 @@ class _SellerRateState extends State<SellerRate> {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     SmoothStarRating(
+                      rating: 4,
                       starCount: 5,
                       isReadOnly: false,
                       size: 50,
@@ -114,7 +115,7 @@ class _SellerRateState extends State<SellerRate> {
                                 Text('Name: ',
                                     style:
                                         TextStyle(fontWeight: FontWeight.bold)),
-                                Text('Allan Amper'),
+                                Text('Harold Lang'),
                               ],
                             ),
                             SizedBox(height: 10),
@@ -145,7 +146,98 @@ class _SellerRateState extends State<SellerRate> {
                                   style: TextStyle(color: Colors.black),
                                   decoration: InputDecoration(
                                     border: InputBorder.none,
-                                    hintText: '...',
+                                    hintMaxLines: 2,
+                                    hintText:
+                                        'Okay ang product pero dugay lang ni abot',
+                                  ))),
+                          Container(
+                            width: 150,
+                            child: FlatButton(
+                                color: Colors.green,
+                                onPressed: () {},
+                                child: Text(
+                                  'Reply',
+                                  style: TextStyle(color: Colors.white),
+                                )),
+                          )
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              )),
+          Container(
+              width: double.infinity,
+              margin: EdgeInsets.fromLTRB(5, 5, 5, 5),
+              child: Card(
+                elevation: 5,
+                child: Padding(
+                  padding: const EdgeInsets.all(10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(5),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Row(
+                              children: [
+                                Text('Order Id: ',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Text('BA102'),
+                              ],
+                            ),
+                            SizedBox(height: 10),
+                            Row(
+                              children: [
+                                Text('Buyer Id: ',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Text('123456'),
+                              ],
+                            ),
+                            SizedBox(height: 10),
+                            Row(
+                              children: [
+                                Text('Name: ',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Text('Zen Maki'),
+                              ],
+                            ),
+                            SizedBox(height: 10),
+                            Row(
+                              children: [
+                                Text('Ratings: ',
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold)),
+                                Text('4.00'),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                      Column(
+                        children: [
+                          Text('Comments',
+                              style: TextStyle(fontWeight: FontWeight.bold)),
+                          Container(
+                              height: 100,
+                              padding: EdgeInsets.only(left: 15),
+                              decoration: BoxDecoration(
+                                  color: Colors.black12,
+                                  borderRadius: BorderRadius.circular(10)),
+                              width: MediaQuery.of(context).size.height / 4.5,
+                              child: TextFormField(
+                                  maxLines: null,
+                                  style: TextStyle(color: Colors.black),
+                                  decoration: InputDecoration(
+                                    border: InputBorder.none,
+                                    hintMaxLines: 2,
+                                    hintText:
+                                        'I like the product and its very affordable',
                                   ))),
                           Container(
                             width: 150,

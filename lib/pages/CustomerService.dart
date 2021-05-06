@@ -88,14 +88,21 @@ class _CustomerServiceState extends State<CustomerService> {
                       hintText: 'Problem Description',
                     ))),
             SizedBox(height: 10),
-            Container(
-              margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
-              width: double.infinity,
-              child: FlatButton(
-                  color: Colors.green,
-                  child: Text('Submit', style: TextStyle(color: Colors.white)),
-                  onPressed: () {}),
-            ),
+            Builder(builder: (context) {
+              return Container(
+                margin: EdgeInsets.fromLTRB(30, 0, 30, 0),
+                width: double.infinity,
+                child: FlatButton(
+                    color: Colors.green,
+                    child:
+                        Text('Submit', style: TextStyle(color: Colors.white)),
+                    onPressed: () {
+                      SnackBar mysnackbar = SnackBar(
+                          content: Text('Thank you for your Feedback!'));
+                      Scaffold.of(context).showSnackBar(mysnackbar);
+                    }),
+              );
+            }),
           ],
         ),
       ),

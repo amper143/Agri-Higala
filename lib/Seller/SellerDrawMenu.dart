@@ -1,8 +1,14 @@
 import 'package:agri_higala/Seller/AddProduct.dart';
+import 'package:agri_higala/Seller/MainSeller.dart';
 import 'package:agri_higala/Seller/MyProduct.dart';
+import 'package:agri_higala/Seller/ReturnSeller.dart';
+import 'package:agri_higala/Seller/SellerCustomer.dart';
+import 'package:agri_higala/Seller/SellerEarnings.dart';
+import 'package:agri_higala/Seller/SellerInbox.dart';
 import 'package:agri_higala/Seller/SellerOrder.dart';
 import 'package:agri_higala/Seller/SellerRate.dart';
 import 'package:flutter/material.dart';
+import '../Seller/TransactionSeller.dart';
 
 class SellerDrawMenu extends StatelessWidget {
   @override
@@ -40,6 +46,19 @@ class SellerDrawMenu extends StatelessWidget {
           addAutomaticKeepAlives: false,
           padding: EdgeInsets.all(8.0),
           children: [
+            ListTile(
+              leading:
+                  Image.asset('assets/images/balay.png', height: 30, width: 30),
+              onTap: () {
+                Navigator.pushReplacement(context,
+                    MaterialPageRoute(builder: (context) => MainSeller()));
+              },
+              title: Text(
+                'Home',
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+            ),
+            Divider(),
             ListTile(
               leading:
                   Image.asset('assets/images/cart.png', height: 30, width: 30),
@@ -80,7 +99,10 @@ class SellerDrawMenu extends StatelessWidget {
             ListTile(
               leading: Image.asset('assets/images/history.png',
                   height: 30, width: 30),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SellerTrans()));
+              },
               title: Text(
                 'History',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -90,7 +112,10 @@ class SellerDrawMenu extends StatelessWidget {
             ListTile(
               leading: Image.asset('assets/images/return.png',
                   height: 30, width: 30),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SellerReturn()));
+              },
               title: Text(
                 'Return',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -113,7 +138,10 @@ class SellerDrawMenu extends StatelessWidget {
             ListTile(
               leading:
                   Image.asset('assets/images/earn.png', height: 30, width: 30),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SellerEarn()));
+              },
               title: Text(
                 'Earnings',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -123,7 +151,10 @@ class SellerDrawMenu extends StatelessWidget {
             ListTile(
               leading: Image.asset('assets/images/message.png',
                   height: 30, width: 30),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SellerInbox()));
+              },
               title: Text(
                 'Inbox',
                 style: TextStyle(fontWeight: FontWeight.bold),
@@ -133,7 +164,10 @@ class SellerDrawMenu extends StatelessWidget {
             ListTile(
               leading: Image.asset('assets/images/contact.png',
                   height: 30, width: 30),
-              onTap: () {},
+              onTap: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => SellerCustomer()));
+              },
               title: Text(
                 'Customer Service',
                 style: TextStyle(fontWeight: FontWeight.bold),
